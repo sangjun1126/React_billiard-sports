@@ -1,14 +1,26 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Routes를 import합니다.
+import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
+
+function Navbar() {
+  return (
+    <nav>
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">SignUp</Link></li>
+      </ul>
+    </nav>
+  );
+}
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <Routes>로 감싸서 하위에 <Route> 컴포넌트들을 포함시킵니다. */}
+        <Navbar /> {/* 네브바를 App 컴포넌트 안에 추가 */}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
