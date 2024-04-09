@@ -1,22 +1,22 @@
 import React from 'react';
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Routes를 import합니다.
+import Home from './Home';
+import Login from './Login';
+import SignUp from './SignUp';
 
 function App() {
   return (
-    <div>
-      <header>
-        <h1>마이큐 당구장</h1>
-      </header>
-
-      <main>
-        <p>당구장 홈페이지를 만들어보세요!</p>
-      </main>
-
-      <footer>
-        <p>&copy : 2024 마이큐 홈페이지</p>
-      </footer>
-    </div>
-  )
+    <Router>
+      <div>
+        {/* <Routes>로 감싸서 하위에 <Route> 컴포넌트들을 포함시킵니다. */}
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App;
