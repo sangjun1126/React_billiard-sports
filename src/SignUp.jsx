@@ -1,36 +1,34 @@
 import { NextPage } from "next";
-import { useState } from "react";
+import React, { useState } from "react"; // useState 추가
 import Button from "../components/lib/button";
-import React from "react";
 
 const Signup: NextPage = () => {
- // 초기값 세팅 - 아이디, 닉네임, 비밀번호, 비밀번호확인, 이메일, 전화번호, 생년월일
- const [id, setId] = React.useState("");
- const [name, setName] = React.useState("");
- const [password, setPassword] = React.useState("");
- const [passwordConfirm, setPasswordConfirm] = React.useState("");
- const [email, setEmail] = React.useState("");
- const [phone, setPhone] = React.useState("");
- const [birth, setBirth] = React.useState("");
+ // 초기값 세팅 - 아이디, 닉네임 비밀번호, 비밀번호확인, 이메일, 전화번호, 생년월일
+ const [id, setId] = useState(""); // React.useState -> useState 변경
+ const [name, setName] = useState(""); // React.useState -> useState 변경
+ const [password, setPassword] = useState(""); // React.useState -> useState 변경
+ const [passwordConfirm, setPasswordConfirm] = useState(""); // React.useState -> useState 변경
+ const [email, setEmail] = useState(""); // React.useState -> useState 변경
+ const [phone, setPhone] = useState(""); // React.useState -> useState 변경
+ const [birth, setBirth] = useState(""); // React.useState -> useState 변경
 
  // 오류메세지 상태 저장
- const [idMessage, setIdMessage] = React.useState("");
- const [nameMessage, setNameMessage] = React.useState("");
- const [passwordMessage, setPasswordMessage] = React.useState("");
- const [passwordConfirmMessage, setPasswordConfirmMessage] =
-   React.useState("");
- const [emailMessage, setEmailMessage] = React.useState("");
- const [phoneMessage, setPhoneMessage] = React.useState("");
- const [birthMessage, setBirthMessage] = React.useState("");
+ const [idMessage, setIdMessage] = useState(""); // React.useState -> useState 변경
+ const [nameMessage, setNameMessage] = useState(""); // React.useState -> useState 변경
+ const [passwordMessage, setPasswordMessage] = useState(""); // React.useState -> useState 변경
+ const [passwordConfirmMessage, setPasswordConfirmMessage] = useState(""); // React.useState -> useState 변경
+ const [emailMessage, setEmailMessage] = useState(""); // React.useState -> useState 변경
+ const [phoneMessage, setPhoneMessage] = useState(""); // React.useState -> useState 변경
+ const [birthMessage, setBirthMessage] = useState(""); // React.useState -> useState 변경
 
  // 유효성 검사
- const [isId, setIsId] = React.useState(false);
- const [isname, setIsName] = React.useState(false);
- const [isPassword, setIsPassword] = React.useState(false);
- const [isPasswordConfirm, setIsPasswordConfirm] = React.useState(false);
- const [isEmail, setIsEmail] = React.useState(false);
- const [isPhone, setIsPhone] = React.useState(false);
- const [isBirth, setIsBirth] = React.useState(false);
+ const [isId, setIsId] = useState(false); // React.useState -> useState 변경
+ const [isname, setIsName] = useState(false); // React.useState -> useState 변경
+ const [isPassword, setIsPassword] = useState(false); // React.useState -> useState 변경
+ const [isPasswordConfirm, setIsPasswordConfirm] = useState(false); // React.useState -> useState 변경
+ const [isEmail, setIsEmail] = useState(false); // React.useState -> useState 변경
+ const [isPhone, setIsPhone] = useState(false); // React.useState -> useState 변경
+ const [isBirth, setIsBirth] = useState(false); // React.useState -> useState 변경
 
  const onChangeId = (e) => {
    const currentId = e.target.value;
@@ -99,8 +97,8 @@ const Signup: NextPage = () => {
      setIsEmail(true);
    }
  };
- const onChangePhone = (getNumber) => {
-   const currentPhone = getNumber;
+ const onChangePhone = (e) => { // 매개변수 변경
+   const currentPhone = e.target.value;
    setPhone(currentPhone);
    const phoneRegExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
 
@@ -116,7 +114,7 @@ const Signup: NextPage = () => {
  const addHyphen = (e) => {
    const currentNumber = e.target.value;
    setPhone(currentNumber);
-   if (currentNumber.length == 3 || currentNumber.length == 8) {
+   if (currentNumber.length === 3 || currentNumber.length === 8) { // 수정: '=='를 '==='로 변경
      setPhone(currentNumber + "-");
      onChangePhone(currentNumber + "-");
    } else {
