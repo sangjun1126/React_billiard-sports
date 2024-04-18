@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Link, Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import Login from './Login';
 import SignUp from './SignUp';
+import member from './member';
 
 function Navbar() {
   return (
@@ -11,6 +12,7 @@ function Navbar() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">SignUp</Link></li>
+        <li><Link to="/member">단골회원</Link></li>
       </ul>
     </nav>
   );
@@ -25,6 +27,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path='/member' element={<member />} />
         </Routes>
       </div>
     </Router>
