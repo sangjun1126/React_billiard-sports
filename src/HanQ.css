@@ -1,0 +1,101 @@
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 800px; /* 이미지의 너비를 조정 */
+    height: auto; /* 비율 유지 */
+    margin-bottom: 20px;
+  }
+
+.hanq {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  .hanq h1 {
+    text-align: center;
+    color: black;
+  }
+  
+  .history, .members {
+    margin: 20px 0;
+  }
+  
+  .history h2, .members h2 {
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 5px;
+  }
+  
+  .history ul, .members ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .history li, .member {
+    margin-bottom: 10px;
+  }
+  
+  .event-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .event-summary {
+    font-weight: bold;
+  }
+  
+  .event-details {
+    margin-top: 10px;
+    padding-left: 10px;
+  }
+  
+  .history button {
+    padding: 5px 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .history button:hover {
+    background-color: #45a049;
+  }
+  
+  .member h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .member p {
+    margin: 5px 0 0 0;
+  }
+
+  .members {
+    margin-bottom: 40px;
+  }
+  
+  .members h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .members ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .member {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .member-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .member-details {
+    margin-top: 10px;
+  }
